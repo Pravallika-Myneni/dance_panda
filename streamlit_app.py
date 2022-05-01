@@ -6,6 +6,12 @@ import urllib.request
 import re
 import random
 
+import pandas as pd
+import numpy as np
+
+
+
+
 st.set_page_config(
         page_title="Dancing Panda",
         page_icon=":bear:",
@@ -34,10 +40,22 @@ if st.button("Get a youtube dance suggestion"):
 else:
     pass
 
-if st.button("Get a 3-D generated dance video"):
-    st.write("Video: ")
+if st.button("Get a 3-D generated dance video based on song type predicted using Spotify API"):
+    st.write("3D video: ")
+    st.write("Predicted medium group")
+    vidoe_file = open("break.mov", 'rb')
+    video_bytes = vidoe_file.read()
 
-    vidoe_file = open("1.mov", 'rb')
+    st.video(video_bytes)
+
+else:
+    pass
+
+
+if st.button("Get a step-by-step tutorial"):
+    st.write("Step-by-step: ")
+
+    vidoe_file = open("tutorial.mp4", 'rb')
     video_bytes = vidoe_file.read()
 
     st.video(video_bytes)
